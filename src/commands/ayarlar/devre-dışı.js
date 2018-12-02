@@ -44,15 +44,15 @@ module.exports = class DisableCommandCommand extends Command {
 	async run(msg, args) {
 		if(!args.cmdOrGrp.isEnabledIn(msg.guild)) {
 			return msg.chanel.send(
-				`<:basarisiz:361602032143958018> \`${args.cmdOrGrp.name}\` ${args.cmdOrGrp.group ? 'komutu' : 'grubu'} zaten devre dışı.`
+				`\`${args.cmdOrGrp.name}\` ${args.cmdOrGrp.group ? 'komutu' : 'grubu'} zaten devre dışı.`
 			);
 		}
 		if(args.cmdOrGrp.guarded) {
 			return msg.channel.send(
-				`<:basarisiz:361602032143958018> Bunu devre dışı bırakamazsın: \`${args.cmdOrGrp.name}\` ${args.cmdOrGrp.group ? 'komut' : 'grup'}.`
+				` Bunu devre dışı bırakamazsın: \`${args.cmdOrGrp.name}\` ${args.cmdOrGrp.group ? 'komut' : 'grup'}.`
 			);
 		}
 		args.cmdOrGrp.setEnabledIn(msg.guild, false);
-		return msg.channel.send(`<:basarili:361601989056004096> \`${args.cmdOrGrp.name}\` ${args.cmdOrGrp.group ? 'komutu' : 'grubu'} devre dışı bırakıldı.`);
+		return msg.channel.send(`\`${args.cmdOrGrp.name}\` ${args.cmdOrGrp.group ? 'komutu' : 'grubu'} devre dışı bırakıldı.`);
 	}
 };
