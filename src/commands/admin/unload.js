@@ -36,7 +36,7 @@ module.exports = class UnloadCommandCommand extends Command {
 
 	async run(msg, args) {
 		args.command.unload();
-		msg.channel.send(`<:basarili:361601989056004096> \`${args.command.name}\` adlı komut tamamen kapatıldı.`);
+		msg.channel.send(`\`${args.command.name}\` adlı komut tamamen kapatıldı.`);
 		return null;
 	}
 };
