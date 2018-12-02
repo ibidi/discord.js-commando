@@ -43,9 +43,9 @@ module.exports = class ReloadCommandCommand extends Command {
 	async run(msg, args) {
 		args.cmdOrGrp.reload();
 		if(args.cmdOrGrp.group) {
-			msg.channel.send(`<:basarili:361601989056004096> \`${args.cmdOrGrp.name}\` adlı komut yeniden başlatıldı.`);
+			msg.channel.send(`\`${args.cmdOrGrp.name}\` adlı komut yeniden başlatıldı.`);
 		} else {
-			msg.channel.send(`<:basarili:361601989056004096> \`${args.cmdOrGrp.name}\` grubunun tüm komutları yeniden başlatıldı.`);
+			msg.channel.send(`\`${args.cmdOrGrp.name}\` grubunun tüm komutları yeniden başlatıldı.`);
 		}
 		return null;
 	}
