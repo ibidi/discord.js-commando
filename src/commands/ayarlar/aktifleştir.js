@@ -44,10 +44,10 @@ module.exports = class EnableCommandCommand extends Command {
 	async run(msg, args) {
 		if(args.cmdOrGrp.isEnabledIn(msg.guild)) {
 			return msg.channel.send(
-				`<:basarisiz:361602032143958018> \`${args.cmdOrGrp.name}\` ${args.cmdOrGrp.group ? 'komutu' : 'grubu'} zaten etkin.`
+				`\`${args.cmdOrGrp.name}\` ${args.cmdOrGrp.group ? 'komutu' : 'grubu'} zaten etkin.`
 			);
 		}
 		args.cmdOrGrp.setEnabledIn(msg.guild, true);
-		return msg.channel.send(`<:basarili:361601989056004096> \`${args.cmdOrGrp.name}\` ${args.cmdOrGrp.group ? 'komutu' : 'grubu'} ektinleştirildi.`);
+		return msg.channel.send(`\`${args.cmdOrGrp.name}\` ${args.cmdOrGrp.group ? 'komutu' : 'grubu'} ektinleştirildi.`);
 	}
 };
