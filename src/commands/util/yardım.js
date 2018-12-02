@@ -94,7 +94,7 @@ module.exports = class HelpCommand extends Command {
 				.setColor('RANDOM')
 				.setTitle('Tüm komutlar')
 				.addBlankField()
-				.setFooter('© ' + (new Date()).getFullYear() + ' Döngü Yapım', this.client.user.avatarURL);
+				.setFooter('Yardım Sistemi', this.client.user.avatarURL);
 				
 				groups.forEach(group =>
                     			helpbed.addField(`**${group.name}**`,
