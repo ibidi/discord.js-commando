@@ -45,7 +45,7 @@ module.exports = class LoadCommandCommand extends Command {
 
 	async run(msg, args) {
 		this.client.registry.registerCommand(args.command);
-		msg.channel.send(`<:basarili:361601989056004096> \`${this.client.registry.commands.last().name}\` komutu yüklendi.`);
+		msg.channel.send(`\`${this.client.registry.commands.last().name}\` komutu yüklendi.`);
 		return null;
 	}
 };
