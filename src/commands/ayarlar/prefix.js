@@ -40,11 +40,11 @@ module.exports = class PrefixCommand extends Command {
 		if(msg.guild) {
 			if (!this.client.isOwner(msg.author)) {
 				if(!msg.member.hasPermission('ADMINISTRATOR')) {
-					return msg.channel.send("<:basarisiz:361602032143958018> Sunucuda sadece `Yönetici` izni olanlar ön-ek değiştirebilir.");
+					return msg.channel.send("Sunucuda sadece `Yönetici` izni olanlar ön-ek değiştirebilir.");
 				}
 			}
 		} else if(!this.client.isOwner(msg.author)) {
-			return msg.channel.send("<:basarisiz:361602032143958018> Küresel (global) ön-ek'i sadece bot yapımcı(ları) değiştirebilir.");
+			return msg.channel.send("Küresel (global) ön-ek'i sadece bot yapımcı(ları) değiştirebilir.");
 		}
 
 		const lowercase = args.prefix.toLowerCase();
@@ -53,13 +53,13 @@ module.exports = class PrefixCommand extends Command {
 		if(lowercase === 'normal') {
 			if(msg.guild) msg.guild.commandPrefix = null; else this.client.commandPrefix = null;
 			const current = this.client.commandPrefix ? `\`${this.client.commandPrefix}\`` : 'ön-ek yok';
-			response = `<:basarili:361601989056004096> Ön-ek normale döndürüldü. (ön-ek: ${current}).`;
+			response = `Ön-ek normale döndürüldü. (ön-ek: ${current}).`;
 		} else {
 			if(msg.guild) msg.guild.commandPrefix = prefix; else this.client.commandPrefix = prefix;
-			response = prefix ? `<:basarili:361601989056004096> Ön-ek \`${args.prefix}\` yapıldı.` : "Komut ön-ek'i kaldırıldı!";
+			response = prefix ? `Ön-ek \`${args.prefix}\` yapıldı.` : "Komut ön-ek'i kaldırıldı!";
 		}
 
-		msg.channel.send(`<:basarili:361601989056004096> ${response} Komutları çalıştırmak için: ${msg.anyUsage('komut')}.`);
+		msg.channel.send(`${response} Komutları çalıştırmak için: ${msg.anyUsage('komut')}.`);
 		return null;
 	}
 };
